@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'; // Import your CSS if you have any
+import './App.css';
 
 import TransactionHistory from './components/TransactionHistory.js';
 

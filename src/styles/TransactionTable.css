@@ -20,6 +20,14 @@ h1 {
   max-height: 565px;
 }
 
+.transaction-category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-right: 17px;
+}
+
 .transaction-item {
   display: flex;
   flex-direction: row;
@@ -37,6 +45,10 @@ h1 {
 .transaction-label {
   font-weight: bold;
   margin-bottom: 5px;
+}
+
+.transaction-label:first-child:hover {
+  cursor: pointer;
 }
 
 .transaction-value {
@@ -64,3 +76,21 @@ button:hover {
 }
 
 
+/*  */
+
+.sort-arrow {
+  display: inline-block;
+  margin-left: 4px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.asc {
+  border-bottom: 4px solid #000;
+}
+
+.desc {
+  border-top: 4px solid #000;
+}

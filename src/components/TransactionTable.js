@@ -41,6 +41,11 @@ const TransactionTable = ({ transactions, selectedUser, users, searchQuery }) =>
   return (
     <div className='transaction-table'>
       <h1>User Transactions</h1>
+            <div className='transaction-category'>
+              <div className='transaction-label'>From (Source ID):</div>
+              <div className='transaction-label'>To (Target ID)</div>
+              <div className='transaction-label'>Amount:</div>
+            </div>
       <div className='transaction-list'>
         {filteredTransactions.map((transaction, index) => (
           <div key={index} className='transaction-item' style={
@@ -48,16 +53,13 @@ const TransactionTable = ({ transactions, selectedUser, users, searchQuery }) =>
             { backgroundColor: "rgba(255, 50, 71, 0.2)" } : { backgroundColor: "rgba(60, 179, 113, 0.2)" }
           }>
             <div className='transaction-info'>
-              <div className='transaction-label'>From (Source ID):</div>
               <div className='transaction-value'>{getUserNameById(transaction.sourceId)}</div>
             </div>
             <div className='transaction-info'>
-              <div className='transaction-label'>To (Target ID):</div>
               <div className='transaction-value'>{getUserNameById(transaction.targetId)}</div>
             </div>
             <div className='transaction-info'>
-              <div className='transaction-label'>Amount:</div>
-              <div className='transaction-value'>{transaction.amount}</div>
+              <div className='transaction-value'>{transaction.sourceId === selectedUser ? -transaction.amount : transaction.amount} </div>
             </div>
           </div>
         ))}

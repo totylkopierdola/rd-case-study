@@ -17,8 +17,6 @@ function calculateAccountBalance(selectedUser, transactions) {
 function AccountBalance({ selectedUser, transactions }) {
   const accountBalance = calculateAccountBalance(selectedUser, transactions);
 
-  console.log(accountBalance);
-
   return (
     <div>
       <h2>Balance: {accountBalance} </h2>
